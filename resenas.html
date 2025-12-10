@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reseñas - Dinarky | ARK Survival Ascended</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Menú Lateral -->
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <img src="img/image.png" alt="Dinarky Logo" class="sidebar-logo">
+            <h2 class="sidebar-title">DINARKY</h2>
+        </div>
+        <button class="close-btn" id="closeBtn">&times;</button>
+        <ul class="sidebar-menu">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="introduccion.html">Introducción</a></li>
+            <li><a href="historia.html">Historia</a></li>
+            <li><a href="packs.html">Packs de Donaciones</a></li>
+            <li><a href="normativas.html">Normativas</a></li>
+            <li><a href="sugerencias.html">Sugerencias</a></li>
+            <li><a href="resenas.html">Reseñas</a></li>
+        </ul>
+        <div class="sidebar-socials">
+            <a href="https://www.tiktok.com/@dinarkyrp?_r=1&_t=ZN-913GLO1j9nO" target="_blank" class="social-link small-social" title="TikTok">
+                <img src="img/TIKTOK.png" alt="TikTok" width="32" height="32" class="social-icon">
+            </a>
+            <a href="https://discord.gg/jSgppTzzQH" target="_blank" class="social-link small-social" title="Discord">
+                <img src="img/DISCORD.webp" alt="Discord" width="32" height="32" class="social-icon">
+            </a>
+            <a href="https://www.instagram.com/dinarkyoficial?igsh=MXB2ZXl2bmpkdHFzdQ==" target="_blank" class="social-link instagram-link" title="Instagram">
+                <img src="img/Insta.webp" alt="Instagram" width="32" height="32" class="social-icon">
+            </a>
+        </div>
+    </div>
+
+    <!-- Overlay para cerrar sidebar -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- Navegación -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <button class="menu-toggle" id="menuToggle" style="position: absolute; left: 60px;">☰</button>
+            <div class="navbar-brand" style="flex: 0 1 auto; min-width: 0;">
+                <img src="img/h32-removebg-preview.png" alt="Dinarky Logo" style="height: 80px; width: auto; max-width: 700px; object-fit: contain;">
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenido Principal -->
+    <section class="page-content">
+        <div class="container">
+            <h1>⭐ Reseñas de Jugadores</h1>
+            <div class="content-box">
+                <h2>Lo Que Dice Nuestra Comunidad</h2>
+                <p>Las reseñas de nuestros jugadores son el reflejo de la calidad y dedicación que ponemos en Dinarky. Lee lo que otros aventureros piensan sobre nuestro servidor.</p>
+
+                <h3><img src="img/h32-removebg-preview.png" alt="Dinarky Logo" style="height: 40px; width: auto;"></h3>
+                <div class="review-form-container">
+                    <form id="reviewForm" class="review-form">
+                        <div class="form-group">
+                            <label for="reviewNombre">Nombre en el Servidor:</label>
+                            <input type="text" id="reviewNombre" name="nombre" required placeholder="Tu nombre de rol">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="reviewRating">Calificación:</label>
+                            <div class="rating-selector">
+                                <input type="radio" id="star5" name="rating" value="5">
+                                <label for="star5" class="star-label">⭐⭐⭐⭐⭐ Excelente (5)</label>
+
+                                <input type="radio" id="star4" name="rating" value="4">
+                                <label for="star4" class="star-label">⭐⭐⭐⭐ Muy Bueno (4)</label>
+
+                                <input type="radio" id="star3" name="rating" value="3">
+                                <label for="star3" class="star-label">⭐⭐⭐ Bueno (3)</label>
+
+                                <input type="radio" id="star2" name="rating" value="2">
+                                <label for="star2" class="star-label">⭐⭐ Aceptable (2)</label>
+
+                                <input type="radio" id="star1" name="rating" value="1">
+                                <label for="star1" class="star-label">⭐ Necesita Mejora (1)</label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="reviewText">Tu Reseña:</label>
+                            <textarea id="reviewText" name="resena" required placeholder="Cuéntanos qué te parece el servidor..." rows="5"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Enviar Reseña</button>
+                        <div id="reviewMessage" class="form-message"></div>
+                    </form>
+                </div>
+
+                <h3><img src="img/h32-removebg-preview.png" alt="Dinarky Logo" style="height: 40px; width: auto;"></h3>
+                <div id="reviewsList" class="reviews-list">
+                    <p class="no-reviews">Cargando reseñas...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Dinarky - El Último Oasis. Servidor no oficial de ARK Survival Ascended.</p>
+            <p>ARK Survival Ascended es propiedad de Studio Wildcard.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Sistema de Reseñas con localStorage
+        const reviewForm = document.getElementById('reviewForm');
+        const reviewsList = document.getElementById('reviewsList');
+        const reviewMessage = document.getElementById('reviewMessage');
+
+        // Cargar reseñas al abrir la página
+        loadReviews();
+
+        // Manejar envío de formulario
+        reviewForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const nombre = document.getElementById('reviewNombre').value;
+            const rating = document.querySelector('input[name="rating"]:checked');
+            const resena = document.getElementById('reviewText').value;
+
+            if (!rating) {
+                showMessage('Por favor selecciona una calificación', 'error');
+                return;
+            }
+
+            // Crear objeto de reseña
+            const review = {
+                id: Date.now(),
+                nombre: nombre,
+                rating: parseInt(rating.value),
+                resena: resena,
+                fecha: new Date().toLocaleDateString('es-ES', { 
+                    year: 'numeric', 
+                    month: 'long', 
+                    day: 'numeric' 
+                })
+            };
+
+            // Obtener reseñas existentes
+            let reviews = JSON.parse(localStorage.getItem('dinarkyReviews')) || [];
+
+            // Agregar nueva reseña al principio
+            reviews.unshift(review);
+
+            // Guardar en localStorage
+            localStorage.setItem('dinarkyReviews', JSON.stringify(reviews));
+
+            // Mostrar mensaje de éxito
+            showMessage('¡Reseña guardada exitosamente!', 'success');
+
+            // Limpiar formulario
+            reviewForm.reset();
+
+            // Recargar reseñas
+            loadReviews();
+        });
+
+        function loadReviews() {
+            const reviews = JSON.parse(localStorage.getItem('dinarkyReviews')) || [];
+
+            if (reviews.length === 0) {
+                reviewsList.innerHTML = '<p class="no-reviews">No hay reseñas aún. ¡Sé el primero en dejar una!</p>';
+                return;
+            }
+
+            reviewsList.innerHTML = '';
+
+            reviews.forEach(review => {
+                const reviewElement = document.createElement('div');
+                reviewElement.className = 'review-card';
+                reviewElement.innerHTML = `
+                    <div class="review-header">
+                        <div class="review-author">
+                            <h4>${review.nombre}</h4>
+                            <span class="review-date">${review.fecha}</span>
+                        </div>
+                        <div class="review-rating">
+                            ${'⭐'.repeat(review.rating)}
+                        </div>
+                    </div>
+                    <p class="review-text">${review.resena}</p>
+                    <button class="review-delete-btn" onclick="deleteReview(${review.id})">Eliminar</button>
+                `;
+                reviewsList.appendChild(reviewElement);
+            });
+        }
+
+        function deleteReview(id) {
+            if (confirm('¿Estás seguro de que deseas eliminar esta reseña?')) {
+                let reviews = JSON.parse(localStorage.getItem('dinarkyReviews')) || [];
+                reviews = reviews.filter(r => r.id !== id);
+                localStorage.setItem('dinarkyReviews', JSON.stringify(reviews));
+                loadReviews();
+                showMessage('Reseña eliminada', 'success');
+            }
+        }
+
+        function showMessage(msg, type) {
+            reviewMessage.textContent = msg;
+            reviewMessage.className = 'form-message ' + type;
+            setTimeout(() => {
+                reviewMessage.textContent = '';
+                reviewMessage.className = 'form-message';
+            }, 4000);
+        }
+    </script>
+</body>
+</html>

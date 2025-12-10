@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dinarky - El Último Oasis | ARK Survival Ascended</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Menú Lateral -->
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <img src="img/image.png" alt="Dinarky Logo" class="sidebar-logo">
+            <h2 class="sidebar-title">DINARKY</h2>
+        </div>
+        <button class="close-btn" id="closeBtn">&times;</button>
+        <ul class="sidebar-menu">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="introduccion.html">Introducción</a></li>
+            <li><a href="historia.html">Historia</a></li>
+            <li><a href="packs.html">Packs de Donaciones</a></li>
+            <li><a href="normativas.html">Normativas</a></li>
+            <li><a href="sugerencias.html">Sugerencias</a></li>
+            <li><a href="resenas.html">Reseñas</a></li>
+        </ul>
+        <div class="sidebar-socials">
+            <a href="https://www.tiktok.com/@dinarkyrp?_r=1&_t=ZN-913GLO1j9nO" target="_blank" class="social-link small-social" title="TikTok">
+                <img src="img/TIKTOK.png" alt="TikTok" width="32" height="32" class="social-icon">
+            </a>
+            <a href="https://discord.gg/jSgppTzzQH" target="_blank" class="social-link small-social" title="Discord">
+                <img src="img/DISCORD.webp" alt="Discord" width="32" height="32" class="social-icon">
+            </a>
+            <a href="https://www.instagram.com/dinarkyoficial?igsh=MXB2ZXl2bmpkdHFzdQ==" target="_blank" class="social-link instagram-link" title="Instagram">
+                <img src="img/Insta.webp" alt="Instagram" width="32" height="32" class="social-icon">
+            </a>
+        </div>
+    </div>
+
+    <!-- Overlay para cerrar sidebar -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- Navegación -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <button class="menu-toggle" id="menuToggle" style="position: absolute; left: 60px;">☰</button>
+            <div class="navbar-brand" style="flex: 0 1 auto; min-width: 0;">
+                <img src="img/h32-removebg-preview.png" alt="Dinarky Logo" style="height: 80px; width: auto; max-width: 700px; object-fit: contain">
+            </div>
+            <div class="navbar-socials" style="position: absolute; right: 150px;">
+                <a href="https://www.tiktok.com/@dinarkyrp?_r=1&_t=ZN-913GLO1j9nO" target="_blank" class="navbar-social-link small-social" title="TikTok">
+                    <img src="img/TIKTOK.png" alt="TikTok" width="10" height="28" class="navbar-social-icon">
+                </a>
+                <a href="https://discord.gg/jSgppTzzQH" target="_blank" class="navbar-social-link small-social" title="Discord">
+                    <img src="img/DISCORD.webp" alt="Discord" width="28" height="28" class="navbar-social-icon">
+                </a>
+                <a href="https://www.instagram.com/dinarkyoficial?igsh=MXB2ZXl2bmpkdHFzdQ==" target="_blank" class="navbar-social-link instagram-link" title="Instagram">
+                    <img src="img/Insta.webp" alt="Instagram" width="28" height="28" class="navbar-social-icon">
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <img src="img/h32-removebg-preview.png" alt="Dinarky Logo" style="height: 250px; width: auto; max-width: 90vw;">
+            <p class="tagline">Sobrevive en las dunas infinitas de ARK Survival Ascended</p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary" onclick="window.location.href='introduccion.html'">Únete Ahora</button>
+                <a href="normativas.html" class="btn btn-secondary">Ver Reglas</a>
+            </div>
+        </div>
+        <div class="sand-animation"></div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Dinarky - El Último Oasis. Servidor no oficial de ARK Survival Ascended.</p>
+            <p>ARK Survival Ascended es propiedad de Studio Wildcard.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Packs de Donaciones - Dinarky | ARK Survival Ascended</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Menú Lateral -->
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <img src="img/image.png" alt="Dinarky Logo" class="sidebar-logo">
+            <h2 class="sidebar-title">DINARKY</h2>
+        </div>
+        <button class="close-btn" id="closeBtn">&times;</button>
+        <ul class="sidebar-menu">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="introduccion.html">Introducción</a></li>
+            <li><a href="historia.html">Historia</a></li>
+            <li><a href="packs.html">Packs de Donaciones</a></li>
+            <li><a href="normativas.html">Normativas</a></li>
+            <li><a href="sugerencias.html">Sugerencias</a></li>
+            <li><a href="resenas.html">Reseñas</a></li>
+        </ul>
+        <div class="sidebar-socials">
+            <a href="https://www.tiktok.com/@dinarkyrp?_r=1&_t=ZN-913GLO1j9nO" target="_blank" class="social-link small-social" title="TikTok">
+                <img src="img/TIKTOK.png" alt="TikTok" width="32" height="32" class="social-icon">
+            </a>
+            <a href="https://discord.gg/jSgppTzzQH" target="_blank" class="social-link small-social" title="Discord">
+                <img src="img/DISCORD.webp" alt="Discord" width="32" height="32" class="social-icon">
+            </a>
+            <a href="https://www.instagram.com/dinarkyoficial?igsh=MXB2ZXl2bmpkdHFzdQ==" target="_blank" class="social-link instagram-link" title="Instagram">
+                <img src="img/Insta.webp" alt="Instagram" width="32" height="32" class="social-icon">
+            </a>
+        </div>
+    </div>
+
+    <!-- Overlay para cerrar sidebar -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- Navegación -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <button class="menu-toggle" id="menuToggle" style="position: absolute; left: 60px;">☰</button>
+            <div class="navbar-brand" style="flex: 0 1 auto; min-width: 0;">
+                <img src="img/h32-removebg-preview.png" alt="Dinarky Logo" style="height: 80px; width: auto; max-width: 700px; object-fit: contain;">
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenido Principal -->
+    <section class="page-content">
+        <div class="container">
+            <h1>Packs de Donaciones</h1>
+            <div class="content-box">
+                <p class="intro-text">Apoya el desarrollo de Dinarky y obtén beneficios exclusivos. Todas las donaciones ayudan a mantener el servidor activo 24/7 y mejorar constantemente la experiencia de juego.</p>
+
+                <div class="packs-grid">
+                    <!-- Pack Arena -->
+                    <div class="pack-card">
+                        <div class="pack-header arena">
+                            <h3>Pack Arena</h3>
+                            <p class="price">$5 USD</p>
+                        </div>
+                        <div class="pack-content">
+                            <ul class="pack-benefits">
+                                <li>✓ 50 Puntos de Donación</li>
+                                <li>✓ Skin exclusivo Arena</li>
+                                <li>✓ Acceso a chat VIP</li>
+                                <li>✓ Etiqueta [ARENA] en chat</li>
+                            </ul>
+                            <button class="btn btn-primary pack-btn">Comprar Ahora</button>
+                        </div>
+                    </div>
+
+                    <!-- Pack Dunas -->
+                    <div class="pack-card">
+                        <div class="pack-header dunas">
+                            <h3>Pack Dunas</h3>
+                            <p class="price">$15 USD</p>
+                        </div>
+                        <div class="pack-content">
+                            <ul class="pack-benefits">
+                                <li>✓ 150 Puntos de Donación</li>
+                                <li>✓ Skins exclusivos x3</li>
+                                <li>✓ Acceso a canal privado</li>
+                                <li>✓ Etiqueta [DUNAS] en chat</li>
+                                <li>✓ Doble velocidad de progresión</li>
+                            </ul>
+                            <button class="btn btn-primary pack-btn">Comprar Ahora</button>
+                        </div>
+                    </div>
+
+                    <!-- Pack Oasis (Popular) -->
+                    <div class="pack-card popular">
+                        <div class="pack-header oasis">
+                            <span class="popular-badge">⭐ MÁS POPULAR ⭐</span>
+                            <h3>Pack Oasis</h3>
+                            <p class="price">$30 USD</p>
+                        </div>
+                        <div class="pack-content">
+                            <ul class="pack-benefits">
+                                <li>✓ 350 Puntos de Donación</li>
+                                <li>✓ Skins exclusivos x5</li>
+                                <li>✓ Acceso a todos los canales</li>
+                                <li>✓ Etiqueta [OASIS] dorada</li>
+                                <li>✓ Triplicar progresión</li>
+                                <li>✓ Mascotas exclusivas</li>
+                                <li>✓ Soporte prioritario</li>
+                            </ul>
+                            <button class="btn btn-primary pack-btn">Comprar Ahora</button>
+                        </div>
+                    </div>
+
+                    <!-- Pack Legendario -->
+                    <div class="pack-card">
+                        <div class="pack-header legendario">
+                            <h3>Pack Legendario</h3>
+                            <p class="price">$50 USD</p>
+                        </div>
+                        <div class="pack-content">
+                            <ul class="pack-benefits">
+                                <li>✓ 600 Puntos de Donación</li>
+                                <li>✓ Skins exclusivos x7</li>
+                                <li>✓ Acceso VIP absoluto</li>
+                                <li>✓ Etiqueta [LEGENDARIO]</li>
+                                <li>✓ Progresión 5x</li>
+                                <li>✓ Crianza 5x + Domesticación 5x</li>
+                                <li>✓ Mascotas épicas x3</li>
+                                <li>✓ Rol especial en Discord</li>
+                            </ul>
+                            <button class="btn btn-primary pack-btn">Comprar Ahora</button>
+                        </div>
+                    </div>
+                </div>
+
+                <h2>¿Cómo Canjear tu Pack?</h2>
+                <div class="steps">
+                    <div class="step">
+                        <span class="step-number">1</span>
+                        <h4>Compra el Pack</h4>
+                        <p>Selecciona el pack que deseas y completa el pago seguro</p>
+                    </div>
+                    <div class="step">
+                        <span class="step-number">2</span>
+                        <h4>Obtén el Código</h4>
+                        <p>Recibirás un código de activación en tu email</p>
+                    </div>
+                    <div class="step">
+                        <span class="step-number">3</span>
+                        <h4>Activa en Discord</h4>
+                        <p>Usa el comando /redeem [código] en nuestro Discord</p>
+                    </div>
+                    <div class="step">
+                        <span class="step-number">4</span>
+                        <h4>¡Disfruta!</h4>
+                        <p>Accede a todos tus beneficios exclusivos inmediatamente</p>
+                    </div>
+                </div>
+
+                <h2>Nota Importante</h2>
+                <p class="note">Las donaciones son voluntarias y no se reembolsan. Los puntos de donación y beneficios son válidos mientras permaneces en el servidor. Todos los beneficios incluyen acceso prioritario al soporte técnico.</p>
+
+                <div class="action-buttons">
+                    <a href="https://discord.gg/jSgppTzzQH" class="btn btn-primary" target="_blank">Habla con Administración</a>
+                    <a href="index.html" class="btn btn-secondary">Volver al Inicio</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Dinarky - El Último Oasis. Servidor no oficial de ARK Survival Ascended.</p>
+            <p>ARK Survival Ascended es propiedad de Studio Wildcard.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
